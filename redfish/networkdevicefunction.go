@@ -23,6 +23,11 @@ const (
 	// MutualCHAPAuthenticationMethod iSCSI Mutual Challenge Handshake
 	// Authentication Protocol (CHAP) authentication is used.
 	MutualCHAPAuthenticationMethod AuthenticationMethod = "MutualCHAP"
+	// DHCHAPAuthenticationMethod Diffie-Hellman Challenge Handshake
+	// Authentication Protocol (DHCHAP) is an authentication protocol used in
+	// Fibre Channel. DHCHAP implies that only properties 'TargetCHAPUser'
+	// and 'TargetPassword' need to be present.
+	DHCHAPAuthenticationMethod AuthenticationMethod = "DHCHAP"
 )
 
 // BootMode is the boot operation mode.

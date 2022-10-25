@@ -9,7 +9,6 @@ import (
 
 	"github.com/stmcginnis/gofish/common"
 	"github.com/stmcginnis/gofish/redfish"
-	"github.com/stmcginnis/gofish/swordfish"
 )
 
 // Expand shall contain information about the support of the $expand query
@@ -241,13 +240,13 @@ func (serviceroot *Service) Managers() ([]*redfish.Manager, error) {
 }
 
 // StorageSystems gets the storage system instances managed by this service.
-func (serviceroot *Service) StorageSystems() ([]*swordfish.StorageSystem, error) {
-	return swordfish.ListReferencedStorageSystems(serviceroot.Client, serviceroot.storageSystems)
+func (serviceroot *Service) StorageSystems() ([]*redfish.StorageSystem, error) {
+	return redfish.ListReferencedStorageSystems(serviceroot.Client, serviceroot.storageSystems)
 }
 
 // StorageServices gets the Swordfish storage services
-func (serviceroot *Service) StorageServices() ([]*swordfish.StorageService, error) {
-	return swordfish.ListReferencedStorageServices(serviceroot.Client, serviceroot.storageServices)
+func (serviceroot *Service) StorageServices() ([]*redfish.StorageService, error) {
+	return redfish.ListReferencedStorageServices(serviceroot.Client, serviceroot.storageServices)
 }
 
 // Tasks gets the system's tasks
